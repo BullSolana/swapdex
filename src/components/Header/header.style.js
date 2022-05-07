@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { FaAngleDown, FaBars } from 'react-icons/fa';
+import {
+  FaAngleDown,
+  // FaBars
+} from 'react-icons/fa';
 
 // const typeface = (props) => props.theme.typeface;
 const primary = props => props.theme.primary;
@@ -53,9 +56,11 @@ export const DropDownIcon = styled(FaAngleDown)`
 export const DropDown = styled.div`
   display: none;
   /* display: flex; */
+  flex-direction: column;
+  /* width: 100%; */
 
   position: absolute;
-  top: 50;
+  top: 70px;
   /* left: 0; */
 
   color: #fff;
@@ -65,6 +70,12 @@ export const DropDown = styled.div`
   }
 
   border: 3px solid white;
+`;
+
+export const DropDownItem = styled.p`
+  &:hover {
+    background-color: ${primary};
+  }
 `;
 
 export const MenuBtn = styled.div`

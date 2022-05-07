@@ -5,6 +5,7 @@ import { FaBars } from 'react-icons/fa';
 import {
   DropDown,
   DropDownIcon,
+  DropDownItem,
   Logo,
   LogoLink,
   MenuBtn,
@@ -16,7 +17,10 @@ import {
 import logo from '../../assets/photo/logo.svg';
 
 const Header = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [
+    showSidebar,
+    // setShowSidebar
+  ] = useState(false);
 
   const NavItem = props => {
     return (
@@ -40,15 +44,27 @@ const Header = () => {
         <NavMenu>
           <NavItem>
             Community
-            <DropDown>one two</DropDown>
+            <DropDown>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+            </DropDown>
           </NavItem>
           <NavItem>
             Docs
-            <DropDown>une deux</DropDown>
+            <DropDown>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+            </DropDown>
           </NavItem>
           <NavItem>
             Media
-            <DropDown>ichi ni</DropDown>
+            <DropDown>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item</DropDownItem>
+            </DropDown>
           </NavItem>
           {/* <NavItem>
             Testy
