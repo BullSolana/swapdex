@@ -24,10 +24,12 @@ const Header = () => {
 
   const NavItem = props => {
     return (
-      <NavListItem marL="32px">
-        {props.children}
-        {props.noIcon ? '' : <DropDownIcon />}
-      </NavListItem>
+      <div style={{ position: 'relative', marginLeft: '32px' }}>
+        <NavListItem>
+          {props.children}
+          {props.noIcon ? '' : <DropDownIcon />}
+        </NavListItem>
+      </div>
     );
   };
 
@@ -45,43 +47,27 @@ const Header = () => {
           <NavItem>
             Community
             <DropDown>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item 1</DropDownItem>
+              <DropDownItem>item 2</DropDownItem>
+              <DropDownItem>item 3</DropDownItem>
             </DropDown>
           </NavItem>
           <NavItem>
             Docs
             <DropDown>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item 1</DropDownItem>
+              <DropDownItem>item 2</DropDownItem>
+              <DropDownItem>item 3</DropDownItem>
             </DropDown>
           </NavItem>
           <NavItem>
             Media
             <DropDown>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
-              <DropDownItem>item</DropDownItem>
+              <DropDownItem>item 1</DropDownItem>
+              <DropDownItem>item 2</DropDownItem>
+              <DropDownItem>item 3</DropDownItem>
             </DropDown>
           </NavItem>
-          {/* <NavItem>
-            Testy
-            <DropDown>
-              <NavMenu
-                //
-                flexDir="column"
-              >
-                <NavListItem>
-                  <NavLink href="#">one</NavLink>
-                </NavListItem>
-                <NavListItem>
-                  <NavLink href="#">two</NavLink>
-                </NavListItem>
-              </NavMenu>
-            </DropDown>
-          </NavItem> */}
           <NavItem noIcon>Blog</NavItem>
         </NavMenu>
       </Wrap>

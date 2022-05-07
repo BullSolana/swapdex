@@ -1,10 +1,7 @@
 import styled from 'styled-components';
-import {
-  FaAngleDown,
-  // FaBars
-} from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 
-// const typeface = (props) => props.theme.typeface;
+const typeface = props => props.theme.typeface;
 const primary = props => props.theme.primary;
 
 export const LogoLink = styled.a`
@@ -32,18 +29,12 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-  /* position: relative; */
   color: #fff;
   font-size: 14px;
   display: flex;
   align-items: center;
-
-  margin-left: ${({ marL }) => (marL ? marL : '0px')};
-
   list-style-type: none;
   cursor: pointer;
-
-  /* border: 3px solid white; */
 `;
 
 export const NavLink = styled.a``;
@@ -51,30 +42,40 @@ export const NavLink = styled.a``;
 export const DropDownIcon = styled(FaAngleDown)`
   color: ${primary};
   margin-left: 8px;
+  transition: 200ms ease-in-out;
+
+  ${NavListItem}:hover & {
+    transform: rotate(180deg);
+  }
 `;
 
 export const DropDown = styled.div`
-  display: none;
-  /* display: flex; */
+  display: flex;
+  background-color: #121b23;
   flex-direction: column;
-  /* width: 100%; */
-
+  width: 100%;
   position: absolute;
-  top: 70px;
-  /* left: 0; */
-
+  top: 20px;
+  left: 0;
   color: #fff;
+  z-index: 1;
+  box-shadow: 1px 1px 5px 1px rgba(200, 200, 200, 0.1);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 200ms ease-in-out;
 
   ${NavListItem}:hover & {
-    display: flex;
+    opacity: 1;
+    transform: scaleY(1);
   }
-
-  border: 3px solid white;
 `;
 
 export const DropDownItem = styled.p`
+  padding: 4px;
+
   &:hover {
     background-color: ${primary};
+    color: ${typeface};
   }
 `;
 
