@@ -81,10 +81,16 @@ export const DropDownItem = styled.p`
 
 export const MenuBtn = styled.div`
   display: none;
-  padding: 16px;
+  padding: 8px;
   color: #fff;
 
-  border: 1px solid white;
+  border-radius: 5px;
+  /* border: 1px solid white; */
+
+  &:active {
+    background-color: ${primary};
+    color: ${typeface};
+  }
 
   @media screen and (max-width: 768px) {
     display: flex;
