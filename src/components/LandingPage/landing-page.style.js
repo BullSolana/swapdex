@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-const typeface = (props) => props.theme.typeface;
-const primary = (props) => props.theme.primary;
+const typeface = props => props.theme.typeface;
+const primary = props => props.theme.primary;
 
 export const TextWrap = styled.div`
   display: flex;
@@ -106,7 +106,8 @@ export const LandingBtn = styled(Link)`
   }
 
   @media screen and (max-width: 480px) {
-    align-self: stretch;
+    /* align-self: stretch; */
+    align-self: center;
 
     font-size: 1rem;
     /* font-weight: 500; */
