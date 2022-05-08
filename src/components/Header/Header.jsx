@@ -131,7 +131,7 @@ const Header = () => {
             menuName="Blog"
             noDropdown
             noIcon
-            href="blog"
+            // href="blog"
             noContent
           />
         </MobileMenu>
@@ -146,7 +146,13 @@ const Header = () => {
           />
           <NavItem menuName="Docs" />
           <NavItem menuName="Media" />
-          <NavItem menuName="Blog" noDropdown noIcon href="blog" noContent />
+          <NavItem
+            menuName="Blog"
+            noDropdown
+            noIcon
+            // href="blog"
+            noContent
+          />
         </NavMenu>
       </Wrap>
     </Container>
