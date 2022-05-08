@@ -126,7 +126,7 @@ export const MenuBtn = styled.div`
 `;
 
 export const MobileMenu = styled.div`
-  display: ${({ show }) => (show ? 'flex' : 'none')};
+  display: none;
   flex-direction: column;
   color: #fff;
   position: absolute;
@@ -137,6 +137,9 @@ export const MobileMenu = styled.div`
   background-color: #121b23;
   box-shadow: 1px 1px 5px 1px rgba(200, 200, 200, 0.1);
 
+  @media screen and (max-width: 768px) {
+    display: ${({ show }) => (show ? 'flex' : 'none')};
+  }
   @media screen and (max-width: 480px) {
     top: 60px;
   }
