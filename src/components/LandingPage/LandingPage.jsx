@@ -12,13 +12,7 @@ import {
 const LandingPage = () => {
   return (
     <Container>
-      <Wrap
-        //
-        // height="90vh"
-        pad="32px"
-        // pad="96px 32px"
-        flexDir="column"
-      >
+      <Wrap pad="32px 24px" flexDir="column">
         <TextWrap>
           <LandingH2>bull dex protocol</LandingH2>
           <LandingH1>

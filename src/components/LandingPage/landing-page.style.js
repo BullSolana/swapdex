@@ -92,7 +92,6 @@ export const LandingBtn = styled(Link)`
 
   &:hover {
     cursor: pointer;
-    /* background-color: #14f195; */
     background-color: #00d195;
   }
 
@@ -106,10 +105,8 @@ export const LandingBtn = styled(Link)`
   }
 
   @media screen and (max-width: 480px) {
-    /* align-self: stretch; */
     align-self: center;
 
     font-size: 1rem;
-    /* font-weight: 500; */
   }
 `;
