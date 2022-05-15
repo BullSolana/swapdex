@@ -29,15 +29,20 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavListItem = styled.li`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
   color: #fff;
   font-size: 14px;
-  display: flex;
-  align-items: center;
   list-style-type: none;
+
   cursor: pointer;
 
   position: relative;
   margin-left: 32px;
+  padding-right: 32px;
 `;
 
 export const NavLink = styled.a`
@@ -49,7 +54,7 @@ export const NavLink = styled.a`
 `;
 
 export const IconWrap = styled.div`
-  margin-left: 8px;
+  margin-right: 8px;
   padding: 4px;
   display: flex;
   justify-content: center;
@@ -94,7 +99,7 @@ export const DropDown = styled.div`
 `;
 
 export const DropDownItem = styled.p`
-  padding: 4px;
+  padding: 6px 8px;
 
   &:hover {
     background-color: ${primary};
@@ -163,9 +168,10 @@ export const MobileMenuItem = styled.div`
 
 export const MobileMenuP = styled.p`
   padding: 8px 16px;
-
   width: 100%;
   height: 100%;
+
+  font-weight: 500;
 `;
 
 export const MobileDropDown = styled.div`
@@ -173,7 +179,8 @@ export const MobileDropDown = styled.div`
   width: 100%;
   color: #fff;
 
-  max-height: ${({ isOpen }) => (isOpen ? '200px' : '0')};
+  max-height: ${({ isOpen }) => (isOpen ? '400px' : '0')};
+  /* max-height: ${({ isOpen }) => (isOpen ? '100%' : '0')}; */
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) => (isOpen ? 'scaleY(1)' : 'scaleY(0)')};
   transform-origin: top;

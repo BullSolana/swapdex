@@ -24,11 +24,29 @@ import logo from '../../assets/photo/logo.svg';
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
 
+  // reusable link component with target='_blank'
+  const Link = props => {
+    return (
+      <>
+        <NavLink href={props.href} target="_blank" rel="noreferrer">
+          {props.children}
+        </NavLink>
+      </>
+    );
+  };
+
   const NavItem = props => {
     return (
       <>
         <NavListItem>
           {props.menuName ? props.menuName : 'Menu'}
+          {props.noIcon ? (
+            ''
+          ) : (
+            <IconWrap>
+              <DropDownIcon />
+            </IconWrap>
+          )}
           {props.noDropdown ? (
             ''
           ) : (
@@ -36,22 +54,15 @@ const Header = () => {
               {props.subMenu ? (
                 props.subMenu.map((sub, i) => {
                   return (
-                    <NavLink href={sub['url']} key={i}>
+                    <Link href={sub['url']} key={i}>
                       <DropDownItem>{sub['name']}</DropDownItem>
-                    </NavLink>
+                    </Link>
                   );
                 })
               ) : (
                 <DropDownItem>Link</DropDownItem>
               )}
             </DropDown>
-          )}
-          {props.noIcon ? (
-            ''
-          ) : (
-            <IconWrap>
-              <DropDownIcon />
-            </IconWrap>
           )}
         </NavListItem>
       </>
@@ -68,11 +79,11 @@ const Header = () => {
           isOpen={isOpen}
           noDropdown={props.noDropdown}
         >
-          <NavLink href={props.href}>
+          <Link href={props.href}>
             <MobileMenuP>
               {props.menuName ? props.menuName : 'Menu'}
             </MobileMenuP>
-          </NavLink>
+          </Link>
           {props.noIcon ? (
             ''
           ) : (
@@ -89,9 +100,9 @@ const Header = () => {
             {props.subMenu ? (
               props.subMenu.map((sub, i) => {
                 return (
-                  <NavLink href={sub['url']} key={i}>
+                  <Link href={sub['url']} key={i}>
                     <MobileDropDownItem>{sub['name']}</MobileDropDownItem>
-                  </NavLink>
+                  </Link>
                 );
               })
             ) : (
@@ -116,36 +127,60 @@ const Header = () => {
         <MenuBtn onClick={toggleMenu}>
           <FaBars />
         </MenuBtn>
-        <MobileMenu show={showSidebar}>
-          <MobileDropdownComponent
-            menuName="Community"
-            subMenu={[
-              { name: 'Link 01', url: '#url_01' },
-              { name: 'Link 02', url: '#url_02' },
-              { name: 'Link 03', url: '#url_03' },
-            ]}
-          />
-          <MobileDropdownComponent menuName="Docs" />
-          <MobileDropdownComponent menuName="Media" />
-          <MobileDropdownComponent
-            menuName="Blog"
-            noDropdown
-            noIcon
-            // href="blog"
-            noContent
-          />
-        </MobileMenu>
         <NavMenu>
           <NavItem
             menuName="Community"
             subMenu={[
-              { name: 'Link 01', url: '#url_01' },
-              { name: 'Link 02', url: '#url_02' },
-              { name: 'Link 03', url: '#url_03' },
+              { name: 'Bull Solana', url: 'https://bullsolana.com/' },
+              { name: 'Telegram', url: 'https://t.me/BullSolanaOfficial' },
+              { name: 'Discord', url: 'https://discord.io/BullSolana' },
+              { name: 'Twitter', url: 'https://twitter.com/bullsolana__' },
+              { name: 'Github', url: 'https://github.com/BullSolana' },
+              {
+                name: 'Solscan',
+                url: 'https://solscan.io/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+              },
+              { name: 'Medium', url: 'https://medium.com/@BullSolana' },
+              { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
+              // { name: 'xxx', url: 'url' },
             ]}
           />
-          <NavItem menuName="Docs" />
-          <NavItem menuName="Media" />
+          <NavItem
+            menuName="Docs"
+            subMenu={[
+              {
+                name: 'LitePaper (view)',
+                url: 'https://drive.google.com/file/d/1z95PlSJXz4njeG0iU9Jf1QaNM5lJNCDE/view?usp=sharing',
+              },
+              {
+                name: 'LitePaper (Github)',
+                url: 'https://github.com/BullSolana/assets/blob/64933988c22536441e940f1f818ca75ea8d0a36c/Bull%20Solana%20Litepaper.pdf',
+              },
+            ]}
+          />
+          <NavItem
+            menuName="Media"
+            subMenu={[
+              {
+                name: 'BirdEye',
+                url: 'https://birdeye.so/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+              },
+              {
+                name: 'Raydium',
+                url: 'https://raydium.io/swap/?inputCurrency=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputCurrency=9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr&inputAmount=1&fixed=in',
+              },
+              {
+                name: 'Bitcoin Talk',
+                url: 'https://bitcointalk.org/index.php?topic=5395477.new#new',
+              },
+              {
+                name: 'Airdrop Form',
+                url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
+              },
+              { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
+              // { name: 'xxx', url: 'url' },
+            ]}
+          />
           <NavItem
             menuName="Blog"
             noDropdown
@@ -154,6 +189,68 @@ const Header = () => {
             noContent
           />
         </NavMenu>
+        <MobileMenu show={showSidebar}>
+          <MobileDropdownComponent
+            menuName="Community"
+            subMenu={[
+              { name: 'Bull Solana', url: 'https://bullsolana.com/' },
+              { name: 'Telegram', url: 'https://t.me/BullSolanaOfficial' },
+              { name: 'Discord', url: 'https://discord.io/BullSolana' },
+              { name: 'Twitter', url: 'https://twitter.com/bullsolana__' },
+              { name: 'Github', url: 'https://github.com/BullSolana' },
+              {
+                name: 'Solscan',
+                url: 'https://solscan.io/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+              },
+              { name: 'Medium', url: 'https://medium.com/@BullSolana' },
+              { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
+              // { name: 'xxx', url: 'url' },
+            ]}
+          />
+          <MobileDropdownComponent
+            menuName="Docs"
+            subMenu={[
+              {
+                name: 'LitePaper (view)',
+                url: 'https://drive.google.com/file/d/1z95PlSJXz4njeG0iU9Jf1QaNM5lJNCDE/view?usp=sharing',
+              },
+              {
+                name: 'LitePaper (Github)',
+                url: 'https://github.com/BullSolana/assets/blob/64933988c22536441e940f1f818ca75ea8d0a36c/Bull%20Solana%20Litepaper.pdf',
+              },
+            ]}
+          />
+          <MobileDropdownComponent
+            menuName="Media"
+            subMenu={[
+              {
+                name: 'BirdEye',
+                url: 'https://birdeye.so/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+              },
+              {
+                name: 'Raydium',
+                url: 'https://raydium.io/swap/?inputCurrency=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputCurrency=9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr&inputAmount=1&fixed=in',
+              },
+              {
+                name: 'Bitcoin Talk',
+                url: 'https://bitcointalk.org/index.php?topic=5395477.new#new',
+              },
+              {
+                name: 'Airdrop Form',
+                url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
+              },
+              { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
+              // { name: 'xxx', url: 'url' },
+            ]}
+          />
+          <MobileDropdownComponent
+            menuName="Blog"
+            noDropdown
+            noIcon
+            // href="blog"
+            noContent
+          />
+        </MobileMenu>
       </Wrap>
     </Container>
   );
