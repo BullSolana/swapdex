@@ -120,10 +120,10 @@ export const MenuBtn = styled.div`
     background-color: rgba(200, 200, 200, 0.2);
   }
 
-  &:active {
+  /* &:active {
     background-color: ${primary};
     color: ${typeface};
-  }
+  } */
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -131,7 +131,9 @@ export const MenuBtn = styled.div`
 `;
 
 export const MobileMenu = styled.div`
-  display: none;
+  /* display: none; */
+  display: flex;
+  opacity: 0;
   flex-direction: column;
   color: #fff;
   position: absolute;
@@ -142,8 +144,13 @@ export const MobileMenu = styled.div`
   background-color: #121b23;
   box-shadow: 1px 1px 5px 1px rgba(200, 200, 200, 0.1);
 
+  transition: 200ms ease-in-out;
+
   @media screen and (max-width: 768px) {
-    display: ${({ show }) => (show ? 'flex' : 'none')};
+    /* display: ${({ show }) => (show ? 'flex' : 'none')}; */
+    opacity: ${({ show }) => (show ? '1' : '0')};
+    transform: ${({ show }) => (show ? 'scaleY(1)' : 'scaleY(0)')};
+    transform-origin: top;
   }
   @media screen and (max-width: 480px) {
     top: 60px;
