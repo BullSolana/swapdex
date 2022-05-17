@@ -118,6 +118,53 @@ const Header = () => {
     setShowSidebar(!showSidebar);
   };
 
+  const community = [
+    { name: 'Bull Solana', url: 'https://bullsolana.com/' },
+    { name: 'Telegram', url: 'https://t.me/BullSolanaOfficial' },
+    { name: 'Discord', url: 'https://discord.io/BullSolana' },
+    { name: 'Twitter', url: 'https://twitter.com/bullsolana__' },
+    { name: 'Github', url: 'https://github.com/BullSolana' },
+    {
+      name: 'Solscan',
+      url: 'https://solscan.io/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+    },
+    { name: 'Medium', url: 'https://medium.com/@BullSolana' },
+    { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
+    // { name: 'xxx', url: 'url' },
+  ];
+
+  const docs = [
+    {
+      name: 'LitePaper (view)',
+      url: 'https://drive.google.com/file/d/1z95PlSJXz4njeG0iU9Jf1QaNM5lJNCDE/view?usp=sharing',
+    },
+    {
+      name: 'LitePaper (Github)',
+      url: 'https://github.com/BullSolana/assets/blob/64933988c22536441e940f1f818ca75ea8d0a36c/Bull%20Solana%20Litepaper.pdf',
+    },
+  ];
+
+  const media = [
+    {
+      name: 'BirdEye',
+      url: 'https://birdeye.so/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
+    },
+    {
+      name: 'Raydium',
+      url: 'https://raydium.io/swap/?inputCurrency=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputCurrency=9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr&inputAmount=1&fixed=in',
+    },
+    {
+      name: 'Bitcoin Talk',
+      url: 'https://bitcointalk.org/index.php?topic=5395477.new#new',
+    },
+    {
+      name: 'Airdrop Form',
+      url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
+    },
+    { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
+    // { name: 'xxx', url: 'url' },
+  ];
+
   return (
     <Container>
       <Wrap justCont="space-between" pad="32px 24px">
@@ -128,59 +175,9 @@ const Header = () => {
           <FaBars />
         </MenuBtn>
         <NavMenu>
-          <NavItem
-            menuName="Community"
-            subMenu={[
-              { name: 'Bull Solana', url: 'https://bullsolana.com/' },
-              { name: 'Telegram', url: 'https://t.me/BullSolanaOfficial' },
-              { name: 'Discord', url: 'https://discord.io/BullSolana' },
-              { name: 'Twitter', url: 'https://twitter.com/bullsolana__' },
-              { name: 'Github', url: 'https://github.com/BullSolana' },
-              {
-                name: 'Solscan',
-                url: 'https://solscan.io/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
-              },
-              { name: 'Medium', url: 'https://medium.com/@BullSolana' },
-              { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
-              // { name: 'xxx', url: 'url' },
-            ]}
-          />
-          <NavItem
-            menuName="Docs"
-            subMenu={[
-              {
-                name: 'LitePaper (view)',
-                url: 'https://drive.google.com/file/d/1z95PlSJXz4njeG0iU9Jf1QaNM5lJNCDE/view?usp=sharing',
-              },
-              {
-                name: 'LitePaper (Github)',
-                url: 'https://github.com/BullSolana/assets/blob/64933988c22536441e940f1f818ca75ea8d0a36c/Bull%20Solana%20Litepaper.pdf',
-              },
-            ]}
-          />
-          <NavItem
-            menuName="Media"
-            subMenu={[
-              {
-                name: 'BirdEye',
-                url: 'https://birdeye.so/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
-              },
-              {
-                name: 'Raydium',
-                url: 'https://raydium.io/swap/?inputCurrency=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputCurrency=9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr&inputAmount=1&fixed=in',
-              },
-              {
-                name: 'Bitcoin Talk',
-                url: 'https://bitcointalk.org/index.php?topic=5395477.new#new',
-              },
-              {
-                name: 'Airdrop Form',
-                url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
-              },
-              { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
-              // { name: 'xxx', url: 'url' },
-            ]}
-          />
+          <NavItem menuName="Community" subMenu={community} />
+          <NavItem menuName="Docs" subMenu={docs} />
+          <NavItem menuName="Media" subMenu={media} />
           <NavItem
             menuName="Blog"
             noDropdown
@@ -190,59 +187,9 @@ const Header = () => {
           />
         </NavMenu>
         <MobileMenu show={showSidebar}>
-          <MobileDropdownComponent
-            menuName="Community"
-            subMenu={[
-              { name: 'Bull Solana', url: 'https://bullsolana.com/' },
-              { name: 'Telegram', url: 'https://t.me/BullSolanaOfficial' },
-              { name: 'Discord', url: 'https://discord.io/BullSolana' },
-              { name: 'Twitter', url: 'https://twitter.com/bullsolana__' },
-              { name: 'Github', url: 'https://github.com/BullSolana' },
-              {
-                name: 'Solscan',
-                url: 'https://solscan.io/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
-              },
-              { name: 'Medium', url: 'https://medium.com/@BullSolana' },
-              { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
-              // { name: 'xxx', url: 'url' },
-            ]}
-          />
-          <MobileDropdownComponent
-            menuName="Docs"
-            subMenu={[
-              {
-                name: 'LitePaper (view)',
-                url: 'https://drive.google.com/file/d/1z95PlSJXz4njeG0iU9Jf1QaNM5lJNCDE/view?usp=sharing',
-              },
-              {
-                name: 'LitePaper (Github)',
-                url: 'https://github.com/BullSolana/assets/blob/64933988c22536441e940f1f818ca75ea8d0a36c/Bull%20Solana%20Litepaper.pdf',
-              },
-            ]}
-          />
-          <MobileDropdownComponent
-            menuName="Media"
-            subMenu={[
-              {
-                name: 'BirdEye',
-                url: 'https://birdeye.so/token/9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr',
-              },
-              {
-                name: 'Raydium',
-                url: 'https://raydium.io/swap/?inputCurrency=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputCurrency=9EKEh1CHMKmyvBTY6qYZm7kgRJE18tCbaY1ZbpdELbVr&inputAmount=1&fixed=in',
-              },
-              {
-                name: 'Bitcoin Talk',
-                url: 'https://bitcointalk.org/index.php?topic=5395477.new#new',
-              },
-              {
-                name: 'Airdrop Form',
-                url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
-              },
-              { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
-              // { name: 'xxx', url: 'url' },
-            ]}
-          />
+          <MobileDropdownComponent menuName="Community" subMenu={community} />
+          <MobileDropdownComponent menuName="Docs" subMenu={docs} />
+          <MobileDropdownComponent menuName="Media" subMenu={media} />
           <MobileDropdownComponent
             menuName="Blog"
             noDropdown
