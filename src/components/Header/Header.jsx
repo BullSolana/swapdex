@@ -19,7 +19,7 @@ import {
   IconWrap,
   MobileMenuP,
 } from './header.style';
-import logo from '../../assets/photo/logo.svg';
+import logo from '../../assets/image/logo.svg';
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
