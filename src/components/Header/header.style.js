@@ -120,18 +120,12 @@ export const MenuBtn = styled.div`
     background-color: rgba(200, 200, 200, 0.2);
   }
 
-  /* &:active {
-    background-color: ${primary};
-    color: ${typeface};
-  } */
-
   @media screen and (max-width: 768px) {
     display: flex;
   }
 `;
 
 export const MobileMenu = styled.div`
-  /* display: none; */
   display: flex;
   opacity: 0;
   flex-direction: column;
@@ -147,7 +141,6 @@ export const MobileMenu = styled.div`
   transition: 200ms ease-in-out;
 
   @media screen and (max-width: 768px) {
-    /* display: ${({ show }) => (show ? 'flex' : 'none')}; */
     opacity: ${({ show }) => (show ? '1' : '0')};
     transform: ${({ show }) => (show ? 'scaleY(1)' : 'scaleY(0)')};
     transform-origin: top;
@@ -187,7 +180,6 @@ export const MobileDropDown = styled.div`
   color: #fff;
 
   max-height: ${({ isOpen }) => (isOpen ? '400px' : '0')};
-  /* max-height: ${({ isOpen }) => (isOpen ? '100%' : '0')}; */
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) => (isOpen ? 'scaleY(1)' : 'scaleY(0)')};
   transform-origin: top;
