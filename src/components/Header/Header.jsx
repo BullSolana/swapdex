@@ -130,7 +130,6 @@ const Header = () => {
     },
     { name: 'Medium', url: 'https://medium.com/@BullSolana' },
     { name: 'Reddit', url: 'https://www.reddit.com/r/BullSolana/' },
-    // { name: 'xxx', url: 'url' },
   ];
 
   const docs = [
@@ -162,7 +161,6 @@ const Header = () => {
       url: 'https://forms.gle/mtJRHw6RKjSGYYH3A',
     },
     { name: 'Email', url: 'mailto:info.bullsolana@gmail.com' },
-    // { name: 'xxx', url: 'url' },
   ];
 
   return (
