@@ -1,18 +1,35 @@
 import { ThemeProvider } from 'styled-components';
-import LandingPage from './components/LandingPage';
-import GlobalStyle, { PrimaryContainer } from './Global.style';
+import GlobalStyle from './Global.style';
 import theme from './theme';
-import imgURL from './assets/image/landing.webp';
-import Header from './components/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import WebApp from './pages/WebApp';
+import Swap from './components/Swap';
 
 function App() {
+  const ComingSoon = () => (
+    <>
+      <h1>Coming soon...</h1>
+    </>
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <PrimaryContainer bgImg={imgURL}>
-        <Header />
-        <LandingPage />
-      </PrimaryContainer>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="app" element={<WebApp />}>
+            <Route path="trading" element={<ComingSoon />} />
+            <Route index element={<Swap />} />
+            <Route path="liquidity" element={<ComingSoon />} />
+            <Route path="pools" element={<ComingSoon />} />
+            <Route path="farms" element={<ComingSoon />} />
+            <Route path="staking" element={<ComingSoon />} />
+            <Route path="nfts" element={<ComingSoon />} />
+          </Route>
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
