@@ -1,13 +1,17 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import AppFooter from '../../components/AppFooter';
 import AppHeader from '../../components/AppHeader';
-import { Link } from 'react-router-dom';
+import { WebAppContent } from './web-app.style';
 
 const WebApp = () => {
   return (
     <>
-      <div>WebApp</div>
-      <Link to="/">Home</Link>
       <AppHeader />
+      <WebAppContent>
+        <Outlet />
+      </WebAppContent>
+      <AppFooter />
     </>
   );
 };

@@ -9,7 +9,6 @@ export const Container = styled.div`
 export const Wrap = styled.div`
   height: ${({ height }) => (height ? height : '')};
   width: 100%;
-  /* max-width: 1200px; */
   max-width: ${({ noMaxW }) => (noMaxW ? '' : '1200px')};
   margin: 0 auto;
   padding: ${({ pad }) => (pad ? pad : '')};

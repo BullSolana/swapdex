@@ -3,7 +3,7 @@ import React from 'react';
 const Swap = () => {
   return (
     <>
-      <div>Swap</div>
+      <h1>Swap</h1>
     </>
   );
 };
