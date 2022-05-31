@@ -1,6 +1,19 @@
 import styled from 'styled-components';
+
+import { NavLink as Link } from 'react-router-dom';
+
 const typeface = props => props.theme.typeface;
 const primary = props => props.theme.primary;
+
+export const Container = styled.div`
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : '#fff')};
+  background-image: url(${({ bgImg }) => (bgImg ? bgImg : '')});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 100vh;
+`;
 
 export const TextWrap = styled.div`
   display: flex;
@@ -60,12 +73,6 @@ export const LandingP = styled.p`
     font-size: 1.25rem;
   }
 `;
-
-const Link = ({ className, children, href }) => (
-  <a href={href} className={className}>
-    <p>{children}</p>
-  </a>
-);
 
 export const LandingBtn = styled(Link)`
   background-color: ${({ bgColor }) => (bgColor ? bgColor : primary)};
